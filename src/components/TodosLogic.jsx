@@ -1,33 +1,28 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import InputTodo from './InputTodo';
 import TodosList from './TodosList';
+import { v4 as uuidv4 } from "uuid";
 
 const TodosLogic = () => {
+  const [todos, setTodos] = useState(retrieveTodos());
 
-  const [todos, setTodos] = useState([
-    {
-      id: 1,
-      title: 'Setup development environment',
-      completed: true,
-    },
-    {
-      id: 2,
-      title: 'Develop website and add content',
-      completed: false,
-    },
-    {
-      id: 3,
-      title: 'Deploy to live server',
-      completed: false,
-    },
-  ]);
+  function retrieveTodos() {
+    const todosJSON = localStorage.getItem('todos');
+    const savedTodos = JSON.parse(todosJSON);
+    return savedTodos || [];
+  }
+
+  useEffect(() => {
+    const todosJSON = JSON.stringify(todos);
+    console.log(todosJSON);
+    localStorage.setItem('todos', todosJSON);
+  }, [todos]);
 
   const deleteTask = (id) => {
     setTodos([...todos.filter(todos => todos.id !== id)])
   }
 
-
-  const handleCheckClick = (id) => {
+  const completeTask = (id) => {
     setTodos((prevState) =>
     prevState.map((todo) => {
       if (todo.id === id) {
@@ -41,10 +36,19 @@ const TodosLogic = () => {
   );
   }
 
+  const addTask = (title) => {
+    const newTask = {
+      id: uuidv4(),
+      title: title,
+      completed: false
+    }
+    setTodos([...todos, newTask])
+  }
+
   return (
     <>
-      <InputTodo/>
-      <TodosList todos={todos} setCompleted={handleCheckClick} deleteItem={deleteTask}/>
+      <InputTodo addTask={addTask} />
+      <TodosList todos={todos} setCompleted={completeTask} deleteItem={deleteTask}/>
     </>
   );
 };
