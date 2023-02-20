@@ -1,8 +1,8 @@
 function InputTodo() {
   return (
     <div className="flex justify-between">
-      <h1>Work in progress</h1>
-      <span>+</span>
+      <input className="rounded-sm" type="text" />
+      <button className="px-6 pt-2.5 pb-2 rounded-sm bg-indigo-500" type="button">Add</button>
     </div>
   );
 }
