@@ -11,7 +11,6 @@
     - [Usage](#usage)
   - [👥 Author ](#-author-)
   - [✅ Current Features ](#-current-features-)
-  - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
   - [⭐️ Show your support ](#️-show-your-support-)
   - [🙏 Acknowledgments ](#-acknowledgments-)
@@ -67,12 +66,9 @@ To run the tests, use the command
 
 ## ✅ Current Features <a name="current-features"></a>
 
-- [Done] **[Visual interface for calculator]**
-- [Done] **[Capability to perform arithmetic operations]**
-
-## 🔭 Future Features <a name="future-features"></a>
-
-- [ ] **[Separate webapp views]**
+- [Done] **[Add new tasks]**
+- [Done] **[Store tasks in the local storage]**
+- [Done] **[Remove tasks]**
 
 ## 🤝 Contributing <a name="contributing"></a>
 
