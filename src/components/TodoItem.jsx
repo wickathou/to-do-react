@@ -1,4 +1,4 @@
-function Tasks() {
+function TodoItem() {
   return (
     <li className="flex justify-between">
       <div className="flex">
@@ -10,4 +10,4 @@ function Tasks() {
   );
 }
 
-export default Tasks;
+export default TodoItem;
