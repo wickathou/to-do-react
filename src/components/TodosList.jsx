@@ -1,12 +1,12 @@
 import TodoItem from './TodoItem';
-import InputTodo from './InputTodo';
 
-function TodosList() {
+function TodosList({todos}) {
   return (
     <>
-      <InputTodo/>
-      <ul className="mb-4 text-base">
-        <TodoItem/>
+      <ul>
+        {todos.map((todo) => (
+          <TodoItem todo={todo}/>
+        ))}
       </ul>
     </>
   );

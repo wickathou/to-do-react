@@ -1,11 +1,11 @@
-function TodoItem() {
+function TodoItem({todo}) {
   return (
-    <li className="flex justify-between">
+    <li className="flex justify-between" key={todo.id}>
       <div className="flex">
-        <span>Select</span>
-        <p className="ml-2">Task</p>
+        <input type="checkbox"/>
+        <p className="ml-2">{todo.title}</p>
       </div>
-      <span>Delete</span>
+      <span>X</span>
     </li>
   );
 }
