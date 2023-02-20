@@ -1,9 +1,10 @@
+import TaskList from './components/TaskList';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Work in progress</h1>
+    <div className="flex justify-center">
+     <TaskList/>
     </div>
   );
 }
